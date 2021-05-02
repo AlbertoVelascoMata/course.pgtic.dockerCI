@@ -1,6 +1,6 @@
 FROM python:3.8
 
-WORKDIR /github/workspace
+WORKDIR /github/workspace/server
 
 COPY ./requirements.txt ./
 
