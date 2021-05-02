@@ -15,6 +15,12 @@ static const char* TAG = "NODE";
 #define NODE_NAME "Node#1234"
 #define NODE_VERSION "3.1"
 
+esp_err_t _http_event_handler(esp_http_client_event_t *evt) {
+    // TODO: Handle events
+    
+    return ESP_OK;
+}
+
 void app_main()
 {
     nvs_flash_init();
@@ -35,7 +41,7 @@ void app_main()
 	esp_http_client_set_method(client, HTTP_METHOD_POST);
 	esp_err_t ret = esp_http_client_perform(client);
 	if (ret != ESP_OK)
-        ESP_LOGE(TAG, "HTTP POST request failed: %s", esp_err_to_name(err));
+        ESP_LOGE(TAG, "HTTP POST request failed: %s", esp_err_to_name(ret));
     else
 		ESP_LOGI(TAG, "HTTP POST Status = %d",
 			esp_http_client_get_status_code(client));

@@ -1,3 +1,5 @@
+name: Test server endpoints
+
 on:
   push:
     branches: [ main ]
