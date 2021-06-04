@@ -25,7 +25,7 @@ class SensorsTestClass(BaseTestClass):
     
     def test_sensors_created(self):
         result = self.client.post('/sensors?name=TestSensor&version=3.0')
-        self.assertEqual(200, result.status_code)
+        self.assertEqual(201, result.status_code)
 
         result = self.client.get('/sensors')
         self.assertIsInstance(result.json, dict)
